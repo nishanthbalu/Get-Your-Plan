@@ -1,0 +1,28 @@
+{% extends 'myapp/user_base.html' %}
+{% load static %}
+{% block title %}Plan Ratings{% endblock %}
+{% block body %}
+<center>
+    <h2><font color="#366092">Plan Ratings</font></h2>
+<div class="container">
+    <form name="frm"  role="form" action="{% url 'user_plan_ratings_add' %}" method="post">
+            {% csrf_token %}
+           <div class="form-group">
+               <label for="remarks">Remarks</label>
+               <input type="text" class="form-control" id="remarks" name="remarks" value="remarks" required="required" >
+           </div>
+           <div class="form-group">
+               <label for="rating">Rating</label>
+               <input type="text" class="form-control" id="rating" name="rating" value="rating" required="required" >
+           </div>
+
+
+            <input type="hidden" class="form-control" id="plan_id" name="plan_id" value="{{plan_id}}" required="required">
+
+            <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+        {{msg}}
+    </form>
+</div>
+</center>
+{% endblock %}

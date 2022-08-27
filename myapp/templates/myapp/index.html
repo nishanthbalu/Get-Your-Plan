@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}
+Get Your Plan
+{% endblock %}
+<!--{% block background %}background="{% static './myapp/images/farmer.jpg' %}"{% endblock %}-->
+{% block body %}
+<!--<center>-->
+<!--    <img src="{% static './myapp/images/plan.jpg' %}" width="600" height="400">-->
+<!--</center>-->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Welcome to Get Your Plan</h1>
+      <h2>Elegant Bootstrap Template for Startups, Apps &amp; more...</h2>
+      <img src="{% static 'myapp/assets/img/hero-img.png'%}" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+      <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+      <div class="btns">
+        <a href="#"><i class="fa fa-apple fa-3x"></i> App Store</a>
+        <a href="#"><i class="fa fa-play fa-3x"></i> Google Play</a>
+        <a href="#"><i class="fa fa-windows fa-3x"></i> windows</a>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+{% endblock %}

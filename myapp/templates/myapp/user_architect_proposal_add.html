@@ -1,0 +1,27 @@
+{% extends 'myapp/user_base.html' %}
+{% load static %}
+{% block title %}Proposal Add{% endblock %}
+{% block body %}
+<center>
+    <h2><font color="#366092">Proposal Add</font></h2>
+<div class="container">
+    <form name="frm"  role="form" action="{% url 'user_architect_proposal_add' %}" method="post"
+        enctype="multipart/form-data">
+            {% csrf_token %}
+           <div class="form-group">
+               <label for="requirments">Requirments</label>
+               <textarea class="form-control" id="requirments" name="requirments" required="required"></textarea>
+           </div>
+            <div class="form-group">
+                <label for="document">Document :</label>
+                <input class="form-control" type="file" name="document" id="document">
+            </div>
+            <input type="hidden" class="form-control" id="arch_id" name="arch_id" value="{{arch_id}}" required="required">
+
+            <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+        {{msg}}
+    </form>
+</div>
+</center>
+{% endblock %}

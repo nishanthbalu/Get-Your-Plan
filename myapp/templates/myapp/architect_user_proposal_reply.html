@@ -1,0 +1,23 @@
+{% extends 'myapp/architect_base.html' %}
+{% load static %}
+{% block title %}Proposal Reply{% endblock %}
+{% block body %}
+<center>
+    <h1>Proposal Reply</h1>
+     <div class="container">
+    <form role="form" name="frm" action="{% url 'architect_user_proposal_reply'%}" method="post">
+        {% csrf_token %}
+            <input type="hidden" class="form-control" id="proposal_id"  name="proposal_id"
+                   value="{{proposal_id}}">
+        <div class="form-group">
+            <label for="remark">Answer :</label>
+            <textarea class="form-control" name="remark" id="remark"></textarea>
+        </div>
+
+       <button type="submit" class="btn btn-info" id="bt" name="bt">Reply</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}

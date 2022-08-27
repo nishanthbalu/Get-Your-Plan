@@ -1,0 +1,36 @@
+{% extends 'myapp/architect_base.html' %}
+{% load static %}
+{% block title %}Plans Add{% endblock %}
+{% block body %}
+<center>
+    <h2><font color="#366092">Plans Add</font></h2>
+<div class="container">
+    <form name="frm"  role="form" action="{% url 'architect_plans_add' %}" method="post">
+            {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="title name" required="required">
+        </div>
+            <div class="form-group">
+                <label for="plan_id">Category</label>
+                    <select class="form-control" id="plan_id"  name="plan_id">
+		            {% for  sc in plan_list%}
+		                <option value="{{sc.id}}">{{sc.plan_type}}</option>
+		            {% endfor %}
+		            </select>
+            </div>
+           <div class="form-group">
+               <label for="descrp">Description</label>
+               <input type="text" class="form-control" id="descrp" name="descrp" placeholder="descrp" required="required">
+           </div>
+           <div class="form-group">
+               <label for="amount">Amount</label>
+               <input type="text" class="form-control" id="amount" name="amount" placeholder="amount " required="required">
+           </div>
+           <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+        {{msg}}
+    </form>
+</div>
+</center>
+{% endblock %}

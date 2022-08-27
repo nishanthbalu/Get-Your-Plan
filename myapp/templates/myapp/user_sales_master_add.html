@@ -1,0 +1,38 @@
+{% extends 'myapp/user_base.html' %}
+{% load static %}
+{% block title %}Plan Purchase{% endblock %}
+{% block body %}
+<center>
+    <h2><font color="#366092">Plan Purchase</font></h2>
+<div class="container">
+    <form name="frm"  role="form" action="{% url 'user_sales_master_add' %}" method="post">
+            {% csrf_token %}
+           <div class="form-group">
+               <label for="commision">Commission</label>
+               <input type="text" class="form-control" id="commision" name="commision2" value="{{commision}}" required="required" disabled>
+               <input type="hidden" class="form-control"  name="commision" value="{{commision}}" required="required" >
+           </div>
+           <div class="form-group">
+               <label for="card">Card Name</label>
+               <input type="text" class="form-control" id="card" name="card" value="card" required="required" >
+           </div>
+           <div class="form-group">
+               <label for="number">Card Number</label>
+               <input type="text" class="form-control" id="number" name="number" value="number" required="required" >
+           </div>
+
+        <div class="form-group">
+               <label for="cvv">CVV</label>
+               <input type="text" class="form-control" id="cvv" name="cvv" value="cvv" required="required" >
+           </div>
+
+            <input type="hidden" class="form-control" id="plan_id" name="plan_id" value="{{plan_id}}" required="required">
+            <input type="hidden" class="form-control" id="arch_id" name="arch_id" value="{{arch_id}}" required="required">
+
+            <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+        {{msg}}
+    </form>
+</div>
+</center>
+{% endblock %}

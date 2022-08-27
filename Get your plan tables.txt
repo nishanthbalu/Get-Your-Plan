@@ -1,0 +1,105 @@
+Tables
+-------------
+
+Login
+
+	id
+	uname
+	password
+	utype
+
+Architect_Details
+
+	arch_id 
+	fname 
+	lname 
+	gender 
+	age
+	addr 
+	pin 
+	contact 
+	image
+	descrp
+	email 
+
+plan_settings
+
+	plan_id
+	plan_type	
+
+
+Architect_plans
+
+	archp_id
+	plan_id
+	arch_id
+	title
+	descrp
+	plans
+	amount
+	date
+	time
+
+Plan_details
+
+	plan_id
+	title
+	image
+	descrp
+
+
+
+
+User_Details
+
+	userid 
+	fname 
+	lname 
+	gender 
+	age
+	addr 
+	pin 
+	contact 
+	image
+	email 
+
+User_search
+	
+	us_id
+	user_id
+	query
+	date
+	time
+
+User_proposal
+	
+	uspro_id
+	userid
+	arch_id
+	requirments
+	filepath
+	remark
+	date
+	time
+
+User_rating
+	
+	ur_id
+	userid
+	plan_id
+	remarks
+	rating
+	date
+	time
+
+sales_master
+
+	s_id
+	arch_id
+	userid
+	plan_id
+	commision
+	card number
+	cvv
+	date
+	time
